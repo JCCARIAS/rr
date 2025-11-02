@@ -1,15 +1,15 @@
 --- REPORTE DE VALIDACIÓN ---
-Funciones: 1
+Funciones: 0
 Parámetros válidos: 3
 Parámetros inválidos: 0
-Asignaciones válidas: 3
+Asignaciones válidas: 1
 Asignaciones inválidas: 0
-If válidos: 1
+If válidos: 0
 If inválidos: 0
-Do válidos: 1
+Do válidos: 0
 Do inválidos: 0
-Condiciones válidas: 3
+Condiciones válidas: 1
 Condiciones inválidas: 0
 Errores léxicos: 0
-Errores sintácticos: 0
+Errores sintácticos: 1
 --------------------------------
