@@ -4,22 +4,41 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Reporte {
-    public int funciones = 0;
-    public int parametrosValidos = 0;
-    public int parametrosInvalidos = 0;
-    public int asignacionesValidas = 0;
-    public int asignacionesInvalidas = 0;
-    public int ifValidos = 0;
-    public int ifInvalidos = 0;
-    public int doValidos = 0;
-    public int doInvalidos = 0;
-    public int condicionesValidas = 0;
-    public int condicionesInvalidas = 0;
-    public int erroresLexicos = 0;
-    public int erroresSintacticos = 0;
+    private int funciones = 0;
+    private int funcionesInvalidas = 0;
+    private int parametrosValidos = 0;
+    private int parametrosInvalidos = 0;
+    private int asignacionesValidas = 0;
+    private int asignacionesInvalidas = 0;
+    private int ifValidos = 0;
+    private int ifInvalidos = 0;
+    private int doValidos = 0;
+    private int doInvalidos = 0;
+    private int condicionesValidas = 0;
+    private int condicionesInvalidas = 0;
+    private int erroresLexicos = 0;
+    private int erroresSintacticos = 0;
 
+    // Métodos incrementales
+    public void addFuncionValida() { funciones++; }
+    public void addFuncionInvalida() { funcionesInvalidas++; }
+    public void addParametroValido() { parametrosValidos++; }
+    public void addParametroInvalido() { parametrosInvalidos++; }
+    public void addAsignacionValida() { asignacionesValidas++; }
+    public void addAsignacionInvalida() { asignacionesInvalidas++; }
+    public void addIfValido() { ifValidos++; }
+    public void addIfInvalido() { ifInvalidos++; }
+    public void addDoValido() { doValidos++; }
+    public void addDoInvalido() { doInvalidos++; }
+    public void addCondicionValida() { condicionesValidas++; }
+    public void addCondicionInvalida() { condicionesInvalidas++; }
+    public void addErrorLexico() { erroresLexicos++; }
+    public void addErrorSintactico() { erroresSintacticos++; }
+
+    // Mostrar reporte en consola
     public void mostrar() {
-        System.out.println("Funciones: " + funciones);
+        System.out.println("Funciones válidas: " + funciones);
+        System.out.println("Funciones inválidas: " + funcionesInvalidas);
         System.out.println("Parámetros válidos: " + parametrosValidos);
         System.out.println("Parámetros inválidos: " + parametrosInvalidos);
         System.out.println("Asignaciones válidas: " + asignacionesValidas);
@@ -32,13 +51,14 @@ public class Reporte {
         System.out.println("Condiciones inválidas: " + condicionesInvalidas);
         System.out.println("Errores léxicos: " + erroresLexicos);
         System.out.println("Errores sintácticos: " + erroresSintacticos);
-        System.out.println("--------------------------------");
     }
 
+    // Guardar en archivo
     public void escribirArchivo(String path) throws IOException {
         try (FileWriter fw = new FileWriter(path)) {
-            fw.write("--- REPORTE DE VALIDACIÓN ---\n");
-            fw.write("Funciones: " + funciones + "\n");
+            fw.write("--- REPORTE FINAL ---\n");
+            fw.write("Funciones válidas: " + funciones + "\n");
+            fw.write("Funciones inválidas: " + funcionesInvalidas + "\n");
             fw.write("Parámetros válidos: " + parametrosValidos + "\n");
             fw.write("Parámetros inválidos: " + parametrosInvalidos + "\n");
             fw.write("Asignaciones válidas: " + asignacionesValidas + "\n");
@@ -51,7 +71,6 @@ public class Reporte {
             fw.write("Condiciones inválidas: " + condicionesInvalidas + "\n");
             fw.write("Errores léxicos: " + erroresLexicos + "\n");
             fw.write("Errores sintácticos: " + erroresSintacticos + "\n");
-            fw.write("--------------------------------\n");
         }
     }
 }
