@@ -7,7 +7,7 @@ import java.util.regex.*;
 public class Lexer {
 
     private BufferedReader reader;
-    private Reporte reporte;
+    private final Reporte reporte;
 
     public Lexer(Reader r, Reporte rep) {
         this.reader = new BufferedReader(r);
@@ -98,4 +98,6 @@ public class Lexer {
             }
         }
     }
+
+   
 }
